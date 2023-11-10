@@ -16,8 +16,8 @@ a:-webkit-any-link {
 body {
   background: radial-gradient(
     circle at 10% 20%,
-    rgb(7, 54, 241) 0%,
-    rgb(7, 54, 241)100.2%
+    rgb(104, 127, 222) 0%,
+    rgb(104, 127, 222)100.2%
   );
   display: block;
   margin: 0;
@@ -94,7 +94,7 @@ body {
 
 .weather {
   font-family: "Cerebri-Sans", Helvetica, Arial, sans-serif;
-  background: #c4c4c2;
+  background: #dbdbda;
   border-radius: 16px;
   box-shadow: 0px 30px 50px rgba(65, 50, 100, 0.08);
   box-sizing: border-box;
@@ -114,7 +114,7 @@ body {
 }
 
 .weather .search-input {
-  background: rgb(244, 230, 168);
+  background: rgb(227, 220, 197);
   border: none;
   padding: 15px 20px;
   display: inline-block;

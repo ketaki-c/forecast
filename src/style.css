@@ -14,13 +14,9 @@ a:-webkit-any-link {
 }
 
 body {
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(211, 99, 99) 0%,
-    rgb(228, 99, 99)100.2%
-  );
-  display: block;
-  margin: 0;
+  background: #f0f8ff;
+  color: #333; 
+  
 }
 
 .app {
@@ -65,8 +61,9 @@ body {
   margin-bottom: 40px;
 }
 
+
 .icons a {
-  color: #ADD8E6;
+  color: #ADD8E6; 
   font-size: 12px;
   margin-bottom: 40px;
 }
@@ -124,14 +121,13 @@ body {
   line-height: 20px;
 }
 
-.weather .btn {
-  background: #4B0082;
+.weather h1 {
+  margin: 20px 0 10px 0;
+  line-height: 29px;
   font-weight: bold;
-  font-size: 16px;
-  padding: 15px 0;
-  border: none;
-  height: 50px;
-  cursor: pointer;
+  font-size: 38px;
+  line-height: 48px;
+  color: #3A3A3A;
 }
 
 .weather .btn:hover {
@@ -241,4 +237,4 @@ li {
 .weather .weatherForecast canvas {
   display: block;
   margin: 20px auto;
-}
+}   

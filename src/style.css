@@ -13,16 +13,12 @@ a:-webkit-any-link {
   text-decoration: none;
 }
 
-body {
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(166, 226, 229) 0%,
-    rgb(198, 232, 221) 100.2%
-  );
 
+body {
+  background: #4B0082;
   display: block;
   margin: 0;
-}
+};
 
 .app {
   display: block;

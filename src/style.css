@@ -16,8 +16,8 @@ a:-webkit-any-link {
 body {
   background: radial-gradient(
     circle at 10% 20%,
-    rgb(104, 127, 222) 0%,
-    rgb(104, 127, 222)100.2%
+    rgb(89, 120, 212) 0%,
+    rgb(89, 120, 212)100.2%
   );
   display: block;
   margin: 0;

@@ -31,7 +31,7 @@ function formatDate(timestamp){
           <div class="col">
           <ul>
           <li class="day">${formatForecastDay(forecastDay.dt)}</li>
-          <li class="icon"><img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" id = "day-icon"/></li>
+          <li class="icon"><img src=""C:\Users\ketak\OneDrive\Desktop\sun.png"" alt="" id = "sun"/></li>
           <li class="temp-high">${Math.round(forecastDay.temp.max)}° </li>
           <li class="temp-low">${Math.round(forecastDay.temp.min)}° </li>
           </ul>
@@ -43,11 +43,11 @@ function formatDate(timestamp){
   }
   
   function getForecast(coordinates) {
-      let apiKey = "a50f410ea36ad12d8cb30de68e6fc33b";
+      let apiKey = "t6c776a3e39270dbf4ae49o0e62fd0ee";
       let units = "imperial";
       let lat = coordinates.lat;
       let lon = coordinates.lon;
-      let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+      let apiUrl = `https://api.shecodes.io/weather/v1/current?query={query}&key={key}`;
       axios.get(apiUrl).then(displayForecast);
   }
   
@@ -69,9 +69,9 @@ function formatDate(timestamp){
   }
   
   function search(city){
-      let apiKey = "a50f410ea36ad12d8cb30de68e6fc33b";
+      let apiKey = "t6c776a3e39270dbf4ae49o0e62fd0ee";
       units = "imperial";
-      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+      let apiUrl = `https://api.shecodes.io/weather/v1/current?query={query}&key={key}`;
       axios.get(apiUrl).then(retrieveCurrentData);
   }
   

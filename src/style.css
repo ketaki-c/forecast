@@ -3,6 +3,9 @@ a:-webkit-any-link {
   cursor: default;
 }
 
+.icons {
+  font-size: 18px; /* Adjust the size to your preference */
+}
 .black {
   color: black !important;
   text-decoration: none;

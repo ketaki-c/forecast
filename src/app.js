@@ -27,20 +27,32 @@ function formatDate(timestamp) {
     let forecastHTML = `<div class="row text-center">`;
     forecast.forEach(function (forecastDay, index) {
       if (index < 5) {
-        forecastHTML = forecastHTML + `  
-            <div class="col">
+        // Extract the weather icon code from the API response
+        let weatherIconCode = forecastDay.weather[0].icon;
+  
+        // Dynamically generate the icon URL using the code
+        let iconUrl = `https://openweathermap.org/img/wn/${weatherIconCode}@2x.png`;
+  
+        forecastHTML += `  
+          <div class="col">
             <ul>
-            <li class="day">${formatForecastDay(forecastDay.dt)}</li>
-            <li class="icon"><img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" id="day-icon" /></li>
-            <li class="temp-high">${Math.round(forecastDay.temp.max)}° </li>
-            <li class="temp-low">${Math.round(forecastDay.temp.min)}° </li>
+              <li class="day">${formatForecastDay(forecastDay.dt)}</li>
+              <li class="icon">
+                <img src="${iconUrl}" alt="" id="day-icon" />
+              </li>
+              <li class="temp-high">${Math.round(forecastDay.temp.max)}°</li>
+              <li class="temp-low">${Math.round(forecastDay.temp.min)}°</li>
             </ul>
-            </div>`;
+          </div>`;
       }
     });
-    forecastHTML = forecastHTML + `</div>`;
+    forecastHTML += `</div>`;
     forecastElement.innerHTML = forecastHTML;
   }
+      
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+
   
   function getForecast(coordinates) {
     let apiKey = "t6c776a3e39270dbf4ae49o0e62fd0ee";

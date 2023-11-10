@@ -1,87 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/d408c2f1d0.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="src/style.css">
-    <title>Weather App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 </head>
-<body>
-    <div class="container">
-        <div class="weather-wrapper">
-            <div class="weather-app">
-                <form class="input-group" id="search-form">
-                    <input 
-                    type="text" 
-                    class="form-control mb-3 "
-                    placeholder="enter a city"
-                    id ="city-input"
-                    autocomplete="off"
-                    autofocus ="on"
-                    />
-                    <button 
-                    class="btn btn-outline-secondary mb-3" 
-                    type="submit"
-                    id="search-button">
-                    <i class="fas fa-search-location"></i>
-                </button>
-                    <button 
-                    class="btn btn-outline-secondary mb-3" 
-                    type="button"
-                    id = "current-button">
-                    <i class="fas fa-map-pin"></i> Current location
-                </button>
-            </form>
-                <div class="overview">
-                <h1 id= "city"></h1>
-                <ul>
-                    <li>Last updated: <span id ="date"></span></li>
-                    <li id = "description"></li>
-                </ul>
-            </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="d-flex weather-temperature">
-                            <img src="" alt="" class=float-left id = "icon"/>
-                            <div class="float-left">
-                                 <strong id ="temperature"></strong> 
-                                 <span class= units>
-                                °F</span>
-                            </div>
-                        </div>
-                    </div>
-                <div class="col-6">
-                    <ul>
-                        <li>
-                            feels Like: <span id = "feels-like"></span> °F
-                        </li>
-                        <li>
-                            humidity: <span id = "humidity"></span> %
-                        </li>
-                        <li>
-                            wind: <span id = "wind"></span> mph
-                        </li>
-                    </ul>
+
+<body class="start">
+  <div class="container">
+    <form class="row g-4" id="search-form">
+      <div class="col-6">
+        <label for="search" class="visually-hidden">🔍Seacrh Your City</label>
+
+        <input type="search" class="form-control search" placeholder="🔍Seacrh Your City" id="query" />
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3 search button">
+          Search
+        </button>
+      </div>
+
+    </form>
+    <div class="heading">
+      <h1 id="name"></h1>
+      <h5 id="date"></h5>
+      <p></p>
+    </div>
+    <div>
+
+      <div class="weatherForecast">
+        <div class="row align-items-center one">
+          <div>
+            <div class="first">
+              <strong class="temperature" id="temperature"></strong>
+              <span class="units" id="units">
+                <a href="#" id="celsius" class="active">°C</a> |
+                <a href="#" id="fahrenheit">°F</a></span>
+              <div class="col" id="description"></div>
+              <div class="col">
+                <div class="icon">
+                  <img id="icon" src="https://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" />
+
+
                 </div>
+              </div>
+              <div class="second">
+                <div class="col">
+                  <div class="col"> Humidity: <span class="picture"><img src="images/output-onlinegiftools.gif"
+                        width="40px" /></span><span id="humid">77</span>%</div>
+
+                  <div class="col">Wind: <span class="picture"><img src="images/output-onlinegiftools (1).gif"
+                        width="40px" /><span id="wind">24</span>km</div>
+                </div>
+              </div>
+              <div class="third">
+                <div class="col">22°C</div>
+                <div class="col">━</div>
+                <div class="col">14°C</div>
+              </div>
             </div>
-            <div class="card" >
-                <section class="forecast" >
-                    <div class="card-header">
-                        5 Day Forecast
-                    </div>
-                    <div class="card-body" id= "forecast">
-                    </div>
-                </section>
-            </div>
+          </div>
         </div>
-        <small> <a href="https://github.com/als11022/weather-app-vanilla" target ="_blank"> Open-source code</a> by Ketaki Chakraborty</small>
+      </div>
+      <div class="containertwo">
+        <div class="g-0 container text-center">
+          <div class="weather" id="weather-five">
+            <div class="row align-items-center one">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="src/app.js"></script>
+  </div>
+  <span><a href="https://github.com/ketaki-c/forecast" target="_blank">Open-Source Code</a>,
+    by Ketaki </span>
+  <script src="src\app.js"></script>
 </body>
+
 </html>

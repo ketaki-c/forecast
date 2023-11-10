@@ -14,7 +14,7 @@ a:-webkit-any-link {
 }
 
 body {
-  background: #f0f8ff;
+  background: rgba(39, 33, 66, 0.4);
   color: #333; 
   
 }

@@ -14,8 +14,13 @@ a:-webkit-any-link {
 }
 
 body {
-  background: #0d6efd;  
-  color: rgba(39, 33, 66, 0.4); 
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(7, 54, 241) 0%,
+    rgb(7, 54, 241)100.2%
+  );
+  display: block;
+  margin: 0;
 }
 
 .app {

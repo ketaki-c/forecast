@@ -31,7 +31,7 @@ function formatDate(timestamp){
           <div class="col">
           <ul>
           <li class="day">${formatForecastDay(forecastDay.dt)}</li>
-          <li class="icon"><img src=""C:\Users\ketak\OneDrive\Desktop\sun.png"" alt="" id = "sun"/></li>
+          <li class="icon"><img src="https://openweathermap.org/img/wn/10d@2x.png" alt="" id = "day-icon"/></li>
           <li class="temp-high">${Math.round(forecastDay.temp.max)}° </li>
           <li class="temp-low">${Math.round(forecastDay.temp.min)}° </li>
           </ul>
@@ -47,7 +47,7 @@ function formatDate(timestamp){
       let units = "imperial";
       let lat = coordinates.lat;
       let lon = coordinates.lon;
-      let apiUrl = `https://api.shecodes.io/weather/v1/current?query={query}&key={key}`;
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}`;
       axios.get(apiUrl).then(displayForecast);
   }
   
@@ -60,7 +60,7 @@ function formatDate(timestamp){
       document.querySelector("#humidity").innerHTML = response.data.main.humidity;
       document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
       document.querySelector("#date").innerHTML = formatDate(response.data.dt * 1000);
-      document.querySelector("#icon").setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+      document.querySelector("#icon").setAttribute("src", `https://openweathermap.org/img/wn/10d@2x.png`);
       document.querySelector("#icon").setAttribute("alt",  response.data.weather[0].description);
       document.querySelector("#icon").setAttribute("class", "float-left");
       document.querySelector("#city-input").value = null;
@@ -71,7 +71,7 @@ function formatDate(timestamp){
   function search(city){
       let apiKey = "t6c776a3e39270dbf4ae49o0e62fd0ee";
       units = "imperial";
-      let apiUrl = `https://api.shecodes.io/weather/v1/current?query={query}&key={key}`;
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}`;
       axios.get(apiUrl).then(retrieveCurrentData);
   }
   
@@ -99,11 +99,11 @@ function formatDate(timestamp){
   }
   
   function retrieveGpsLocation (response) {
-      let apiKey ="a50f410ea36ad12d8cb30de68e6fc33b";
+      let apiKey ="t6c776a3e39270dbf4ae49o0e62fd0ee";
       let units ="imperial";
       let lat = response.coords.latitude;
       let lon = response.coords.longitude;
-      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}`;
       axios.get(apiUrl).then(retrieveCurrentData);
   }
   function getCurrentPosition (){

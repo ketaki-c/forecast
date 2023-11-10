@@ -114,7 +114,7 @@ body {
 }
 
 .weather .search-input {
-  background: #f5f1fd;
+  background: rgb(244, 230, 168);
   border: none;
   padding: 15px 20px;
   display: inline-block;

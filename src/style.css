@@ -148,16 +148,15 @@ body {
   background: #f1a5cf;
 }
 
-.weather .btn.location-btn {
+weather-temp .active {
   background: rgb(250, 247, 247);
-  color: rgb(89, 120, 212);
-  margin-left: 10px; 
+  color: rgb(89, 120, 212);;
+  cursor: default;
 }
-
-.weather .btn.location-btn:hover {
+.weather-temp .active:hover {
   background: #f1a5cf;
-}  
-
+  text-decoration: none;
+}
 .btn-primary.active,
 .btn-primary:active,
 .open > .dropdown-toggle.btn-primary {

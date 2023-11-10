@@ -27,17 +27,13 @@
                     id="search-input"
                   />
                 </div>
-                <input type="text" class="search-input"/>
-                <button class="btn">Search</button>
-                <button class="btn location-btn">Location</button>
-              </div>
                 <div class="col-3">
-                  <input
-                    type="submit"
-                    class="btn btn-primary w-100"
-                    value="Search"
-                  />
-                </div>
+                  <div class="btn-group" role="group" >
+                   <input type="submit" value="Search" class="btn btn-primary w-100"/>
+                      <button class="btn btn-outline-danger" id="location" type="button">
+                          <i class="fas fa-map-marker-alt"></i>
+                      </button>
+                  </div>
               </div>
             </form>
             <div class="weatherInfo">

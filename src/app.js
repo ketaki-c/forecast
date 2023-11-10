@@ -29,8 +29,6 @@ function showCurrentDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
-// Set forecast
-
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -113,8 +111,25 @@ function search(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
-// Add search to form
+
+function getPosition(position) {
+  let apiKey = "t6c776a3e39270dbf4ae49o0e62fd0ee";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let url = `http://api.openweathermap.org/geo/1.0/reverse?lat={lat}&lon={lon}&limit={limit}&appid={API key}`;
+
+  axios.get(url).then(displayTemp);
+}
+
+function getCurrentLocation() {
+  navigator.geolocation.getCurrentPosition(getPosition);
+}
+
+let locationButton = document.querySelector("#location");
+locationButton.addEventListener("click", getCurrentLocation);
 
 let enterNameCity = document.querySelector("#search-form");
 enterNameCity.addEventListener("submit", handleSubmit);

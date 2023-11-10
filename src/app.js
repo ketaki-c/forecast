@@ -71,7 +71,7 @@ function formatDate(timestamp){
   function search(city){
       let apiKey = "t6c776a3e39270dbf4ae49o0e62fd0ee";
       units = "imperial";
-      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}`;
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={apiKey}`;
       axios.get(apiUrl).then(retrieveCurrentData);
   }
   
@@ -103,7 +103,7 @@ function formatDate(timestamp){
       let units ="imperial";
       let lat = response.coords.latitude;
       let lon = response.coords.longitude;
-      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}`;
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={APIKey}`;
       axios.get(apiUrl).then(retrieveCurrentData);
   }
   function getCurrentPosition (){

@@ -8,8 +8,8 @@ a:-webkit-any-link {
   text-decoration: none;
 }
 
-.cyan {
-  color: #81d4fa;
+.LightBlue {
+  color: #ADD8E6;
   text-decoration: none;
 }
 
@@ -126,7 +126,7 @@ body {
 }
 
 .weather .btn {
-  background: #ef75b8;
+  background: #4B0082;
   font-weight: bold;
   font-size: 16px;
   padding: 15px 0;

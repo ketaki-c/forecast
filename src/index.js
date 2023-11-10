@@ -99,16 +99,20 @@ function formatDate(timestamp){
   }
   
   function retrieveGpsLocation (response) {
-      let apiKey ="t6c776a3e39270dbf4ae49o0e62fd0ee";
+      let apiKey ="a50f410ea36ad12d8cb30de68e6fc33b";
       let units ="imperial";
       let lat = response.coords.latitude;
       let lon = response.coords.longitude;
-      let apiUrl = `https://api.shecodes.io/weather/v1/current?query={query}&key={key}`;
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
       axios.get(apiUrl).then(retrieveCurrentData);
   }
   function getCurrentPosition (){
       navigator.geolocation.getCurrentPosition(retrieveGpsLocation);
   }
+  
+  
+  
+  
   let form = document.querySelector("#search-form");
   form.addEventListener("submit", handleSubmit);
   

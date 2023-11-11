@@ -274,3 +274,10 @@ li {
 .icons a:hover {
   color: rgb(188, 19, 194);
 }
+
+.row{
+  border: none
+}
+form{
+  border: none!important;
+}

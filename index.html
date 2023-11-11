@@ -19,7 +19,7 @@
             <div class="weather form">
             <form id="search-form">
               <div class="row">
-                <div class="col-9">
+                <div class="col-7">
                   <input
                     type="search"
                     placeholder="Enter a city"
@@ -27,13 +27,11 @@
                     id="search-input"
                   />
                 </div>
-                <div class="col-3">
-                  <div class="btn-group" role="group" >
-                   <input type="submit" value="Search" class="btn btn-primary w-100"/>
-                      <button class="btn btn-outline-danger" id="location" type="button">
-                          <i class="fas fa-map-marker-alt"></i>
-                      </button>
-                  </div>
+                <div class="col-5 d-flex justify-content-between">
+                  <input type="submit" value="Search" class="btn btn-primary"/>
+                  <button class="btn btn-outline-danger" id="location" type="button">
+                    Current location
+                  </button>
               </div>
             </form>
             <div class="weatherInfo">
@@ -105,7 +103,6 @@
         >hosted on Netlify</a
       >
     </div>
+    <script src="src/app.js"></script>
   </body>
-  </body>
-  <script src="src/app.js"></script>
 </html>

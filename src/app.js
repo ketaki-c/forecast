@@ -106,10 +106,15 @@ function displayTemperature(response) {
   getForecast(response.data.coordinates);
 }
 
+function displayErr(){
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = "City not found"
+}
+
 function search(city) {
   let apiKey = "t6c776a3e39270dbf4ae49o0e62fd0ee";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayTemperature);
+  axios.get(apiUrl).then(displayTemperature).catch(displayErr);
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
@@ -119,9 +124,9 @@ function getPosition(position) {
   let apiKey = "t6c776a3e39270dbf4ae49o0e62fd0ee";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let url = `http://api.openweathermap.org/geo/1.0/reverse?lat={lat}&lon={lon}&limit={limit}&appid={API key}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${lat}&lon=${lon}&key=${apiKey}&units=metric`;
 
-  axios.get(url).then(displayTemp);
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 function getCurrentLocation() {

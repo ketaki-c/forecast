@@ -283,3 +283,7 @@ li {
 form{
   border: none!important;
 }
+.weather p {
+  text-align: center;
+  color: black;
+}

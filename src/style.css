@@ -286,4 +286,5 @@ form{
 .weather p {
   text-align: center;
   color: black;
+  font-size: inherit; 
 }

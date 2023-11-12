@@ -135,6 +135,8 @@ body {
 }
 
 .weather .btn {
+  width: 100%;
+  display: block;
   background: rgb(89, 120, 212);
   color: rgb(250, 247, 247);
   font-weight: bold;

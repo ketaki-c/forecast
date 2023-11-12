@@ -17,23 +17,26 @@
         <div class="container">
           <div class="weather">
             <div class="weather form">
-            <form id="search-form">
-              <div class="row">
-                <div class="col-7">
-                  <input
-                    type="search"
-                    placeholder="Enter a city"
-                    class="form-control search-input"
-                    id="search-input"
-                  />
+              <form id="search-form">
+                <div class="row">
+                  <div class="col-6">
+                    <input
+                      type="search"
+                      placeholder="Enter a city"
+                      class="form-control search-input"
+                      id="search-input"
+                    />
+                  </div>
+                  <div class="col-3">
+                    <input type="submit" value="Search" class="btn btn-primary"/>
+                  </div>
+                  <div class="col-3">
+                    <button class="btn btn-outline-danger" id="location" type="button">
+                      Current location
+                    </button>
+                  </div>
                 </div>
-                <div class="col-5 d-flex justify-content-between">
-                  <input type="submit" value="Search" class="btn btn-primary"/>
-                  <button class="btn btn-outline-danger" id="location" type="button">
-                    Current location
-                  </button>
-              </div>
-            </form>
+              </form>
             <div class="weatherInfo">
               <div class="row">
                 <div class="col-6">
